@@ -21,7 +21,7 @@ matrix:
         env: CONAN_APPLE_CLANG_VERSIONS=8.1
       - <<: *osx
         osx_image: xcode9
-        env: CONAN_APPLE_CLANG_VERSIONS=9.0      
+        env: CONAN_APPLE_CLANG_VERSIONS=9.0
       - <<: *osx
         osx_image: xcode10.1
         env: CONAN_APPLE_CLANG_VERSIONS=10.0
@@ -54,4 +54,6 @@ install:
 script:
   - chmod +x .ci/run.sh
   - ./.ci/run.sh || True
-  - cat conan.log
+  - cat ${CONAN_LOGGING_FILE}
+  - cat Users/travis/.conan/data/log4cplus/2.0.0-rc2/bincrafters/stable/package/13b48d56cd5d7dff22684d58482d685be985d688/conanmanifest.txt || True
+  - cat Users/travis/.conan/data/log4cplus/2.0.0-rc2/bincrafters/stable/package/8716c78af82d70539dd1b3f147031a6b94bd967c/conanmanifest.txt || True
