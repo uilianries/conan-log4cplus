@@ -23,5 +23,6 @@ else
 	sudo apt-get install -y nasm autoconf dh-autoreconf
 fi
 
-pip install conan_package_tools  bincrafters_package_tools
+pip install conan_package_tools bincrafters_package_tools
+pip install conan --update
 conan user
